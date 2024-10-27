@@ -1,0 +1,150 @@
+
+body {
+    background-color: #000000;
+    font-family: Arial, sans-serif;
+}
+.container {
+    margin-top: 20px;
+}
+.search-container {
+    display: flex;
+    justify-content: right;
+    align-items: right;
+    margin-bottom: 20px;
+}
+.search-container input {
+    width: 260px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+.search-container button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ffe600;
+    color: #000;
+    margin-left: 10px;
+}
+.movie {
+    padding: 15px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.movie img {
+    max-height: 250px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+#loading {
+    color: #ddd;
+    text-align: center;
+    font-weight: bold;
+    display: none;
+    margin: 20px;
+}
+#no-results {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #555;
+    display: none;
+}
+.top-right {
+    top: 0px;
+    right: 10px;
+    background-color: #cf0202; /* Black background */
+    color: #FFD700; /* Yellow heart color */
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    z-index: 10;
+    padding: 8px;
+    border-radius: 1%; /* Make it circular */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.top-right:hover {
+    background-color: #b30000; /* Darker background on hover */
+}
+.btn-favorite i {
+    transition: color 0.3s ease;
+}
+.btn-favorite.favorited i {
+    color: #fc65d9; /* Change heart color when favorited */
+}
+.movie-card .card {
+    border: 1px solid #cdd400;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #161617;
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.15); /* Soft white shadow */
+    border-radius: 8px;
+}
+.movie-card .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 20px rgba(255, 255, 255, 0.3); /* Stronger white shadow on hover */
+}
+.movie-card .poster {
+    height: 320px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.rating-card {
+    position: relative; /* Required for positioning the overlay */
+    color: #fff; /* Change text color to white */
+    border: 1px solid #f89d14; /* Optional: add a border to the cards */
+    border-radius: 0.25rem; /* Optional: rounded corners */
+    box-shadow: 0px 4px 10px rgba(255, 238, 7, 0.15); /* Optional: shadow for card */
+    overflow: hidden; /* Hide overflow of the overlay */
+}
+
+.rating-card::before {
+    content: ""; /* Necessary for the pseudo-element */
+    position: absolute; /* Position it absolutely */
+    top: 0; /* Align to the top */
+    left: 0; /* Align to the left */
+    right: 0; /* Extend to the right */
+    bottom: 0; /* Extend to the bottom */
+    z-index: 1; /* Place it below the text */
+    background-size: cover; /* Cover the entire card */
+    background-position: center; /* Center the background image */
+    opacity: 0.7; /* Increase opacity to make it darker */
+    transition: opacity 0.3s; /* Smooth transition for hover effect */
+}
+
+.imdb-card::before {
+    background-image: url('/images/imdb_logo.png'); /* Background image for IMDb */
+}
+
+.rottent-card::before {
+    background-image: url('/images/rottentomatoes_logo.png'); /* Background image for Rotten Tomatoes */
+}
+
+.metacritic-card::before {
+    background-image: url('/images/metacritic_logo.png'); /* Background image for Metacritic */
+}
+
+.card-body {
+    position: relative; /* Ensure the content is above the overlay */
+    z-index: 2; /* Place it above the background */
+}
+
+/* Bold white text styling with black highlight */
+.card-title,
+.card-text {
+    font-weight: bold; /* Make text bold */
+    color: #fff; /* Set text color to white */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1); /* Black shadow effect */
+}
+
+/* Optional: Add a hover effect to increase the opacity for a smoky look */
+.rating-card:hover::before {
+    opacity: 0.85; /* Darken the overlay on hover */
+}
+
+
+
+
+
